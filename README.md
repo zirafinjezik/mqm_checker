@@ -55,9 +55,7 @@ npm run dev
 ```
 
 ## Screenshot
-
-<!-- Add a screenshot of the app here -->
-<!-- ![MQM Error Scorer](./screenshot.png) -->
+<img width="2512" height="1336" alt="Snimka zaslona 2026-03-01 172900" src="https://github.com/user-attachments/assets/b6b3fd37-157c-41d4-b9c5-890c4bd0251f" />
 
 ## Author
 
