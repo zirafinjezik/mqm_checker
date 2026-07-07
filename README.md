@@ -4,7 +4,7 @@ A lightweight web-based tool for Localization Quality Assurance (LQA) using the 
 
 **Live demo:** [mqm-checker.vercel.app](https://mqm-checker.vercel.app)
 
-**Repository:** [github.com/zirafinjezik/mqm-checker](https://github.com/zirafinjezik/mqm-checker)
+**Repository:** [github.com/zirafinjezik/mqm_checker](https://github.com/zirafinjezik/mqm_checker)
 
 ---
 
@@ -16,10 +16,12 @@ A lightweight web-based tool for Localization Quality Assurance (LQA) using the 
 ## What It Does
 
 - Log translation errors with source segment, target (as received), and revised (correct) version
-- Categorize errors using standard MQM taxonomy: Accuracy, Compliance, Language, Style, Terminology (with subcategories)
-- Assign severity levels with weighted scoring: Critical (25 pts), Major (5 pts), Minor (1 pt)
+- Categorize errors using the official MQM CORE typology: 7 dimensions plus Custom, each with standard subcategories
+- Assign severity levels with weighted scoring: Critical (25 pts), Major (5 pts), Minor (1 pt), Neutral (0 pts, for preferential comments)
 - Calculate quality scores automatically based on error penalties relative to total word count
+- Penalty per 1000 words (normalized penalty total) alongside the quality score
 - Pass/fail evaluation against a configurable quality threshold (default: 98%)
+- Session autosave: logged errors and project info survive a page refresh (localStorage)
 - Export to Excel (.xlsx) with a Summary sheet and detailed Error Log, ready for client delivery or internal review
 
 ---
@@ -46,15 +48,20 @@ Most LQA workflows still rely on manually formatted spreadsheets or expensive en
 
 ---
 
-## MQM Error Categories
+## MQM CORE Typology
 
-| Category | Subcategories |
+| Dimension | Subcategories |
 |---|---|
-| Accuracy | Addition, Omission, Incorrect Meaning, Numbers |
-| Compliance | Glossary not used |
-| Language | Punctuation, Spelling/Typos, Grammar/Syntax |
-| Style | Wrong register, Inappropriate formality, Unidiomatic usage, Cultural reference not adapted |
-| Terminology | Inconsistent terminology |
+| Terminology | Inconsistent with terminology resource, Inconsistent use of terminology, Wrong term |
+| Accuracy | Mistranslation, Overtranslation, Undertranslation, Addition, Omission, Do not translate, Untranslated |
+| Linguistic conventions | Grammar, Punctuation, Spelling, Unintelligible, Character encoding, Textual conventions |
+| Style | Organization style, Third-party style, Inconsistent with external reference, Language register, Awkward style, Unidiomatic style, Inconsistent style |
+| Locale conventions | Number, Currency, Measurement, Time, Date, Address, Telephone format, Shortcut key |
+| Audience appropriateness | Culture-specific reference, Offensive |
+| Design and markup | Layout, Markup tag, Truncation/text expansion, Missing text, Link/cross-reference |
+| Custom | Other |
+
+Typology adapted from the [MQM CORE typology](https://themqm.org/the-mqm-typology/) (CC BY 4.0).
 
 ---
 
@@ -69,6 +76,7 @@ Quality Score = 100 - (Total Penalty Points / Word Count) × 100
 | Critical | 25 |
 | Major | 5 |
 | Minor | 1 |
+| Neutral | 0 |
 
 Default pass threshold: **≥ 98%**
 
@@ -76,9 +84,10 @@ Default pass threshold: **≥ 98%**
 
 ## Tech Stack
 
-- React 18+
+- React 19
 - Vite
 - SheetJS (xlsx) for Excel export
+- Vitest (scoring and report builders are covered by unit tests)
 - Deployed on Vercel
 
 ---
@@ -86,8 +95,8 @@ Default pass threshold: **≥ 98%**
 ## Getting Started
 
 ```bash
-git clone https://github.com/zirafinjezik/mqm-checker.git
-cd mqm-checker
+git clone https://github.com/zirafinjezik/mqm_checker.git
+cd mqm_checker
 npm install
 npm run dev
 ```
