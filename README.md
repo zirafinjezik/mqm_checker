@@ -2,7 +2,7 @@
 
 A lightweight web-based tool for Localization Quality Assurance (LQA) using the Multidimensional Quality Metrics (MQM) framework. Built for linguists, LQA reviewers, and localization project managers who need a fast, structured way to log translation errors, calculate quality scores, and generate professional LQA reports.
 
-**Live demo:** [mqm-checker.vercel.app](https://mqm-checker.vercel.app)
+**Live demo:** [mqm.zirafinjezik.hr](https://mqm.zirafinjezik.hr)
 
 **Repository:** [github.com/zirafinjezik/mqm_checker](https://github.com/zirafinjezik/mqm_checker)
 
@@ -111,9 +111,9 @@ This tool is part of a set of three open-source LQA tools built around the full 
 
 | Tool | Purpose | Link |
 |---|---|---|
-| **MQM Error Scorer** | Log errors, score quality, export reports | [mqm-checker.vercel.app](https://mqm-checker.vercel.app) |
-| **LQA Checker** | Review and flag LQA issues | [lqa-checker-s7wi.vercel.app](https://lqa-checker-s7wi.vercel.app) |
-| **LQA Challenge** | Practice and train LQA skills | [lqa-game.vercel.app](https://lqa-game.vercel.app) |
+| **MQM Error Scorer** | Log errors, score quality, export reports | [mqm.zirafinjezik.hr](https://mqm.zirafinjezik.hr) |
+| **LQA Checker** | Review and flag LQA issues | [lqa.zirafinjezik.hr](https://lqa.zirafinjezik.hr) |
+| **LQA Challenge** | Practice and train LQA skills | [game.zirafinjezik.hr](https://game.zirafinjezik.hr) |
 
 ---
 
@@ -125,6 +125,10 @@ This tool is part of a set of three open-source LQA tools built around the full 
 - 💼 [LinkedIn](https://www.linkedin.com/in/natalija-maric-zirafinjezik)
 
 ---
+
+## Privacy
+
+All processing happens in your browser. Segments and error logs are handled by JavaScript on your machine and are never uploaded or transmitted; session autosave uses your browser's localStorage only. For confidential content you can also run the tool offline: clone the repo and run it locally. Hosting (Vercel) logs standard access data such as IP addresses, never content.
 
 ## License
 
