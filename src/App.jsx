@@ -237,6 +237,10 @@ export default function MQMScorer() {
             )}
           </div>
         )}
+
+        <p style={{ marginTop: 32, fontSize: 11.5, color: "#7a6040", textAlign: "center", fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
+          Runs entirely in your browser. Segments and error logs stay on your machine (localStorage only).
+        </p>
       </div>
     </div>
   );
